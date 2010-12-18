@@ -4,11 +4,10 @@
         	<title>
 	<?php // Returns the title based on what is being viewed
 			bloginfo( 'name' );
-			
 	?>
 	</title>
-        <meta name="author" content="Jordi Boggiano" />
-        <meta name="email" content="j.boggiano@seld.be" />
+        <meta name="author" content="Bastian Widmer" />
+        <meta name="email" content="b [dot] widmer [at] dasrecht [dot] net" />
         <meta name="date" content="2010-05-30" />
 
         <script type="text/javascript" src="<?php bloginfo( 'template_directory' ); ?>/jquery-1.4.2.min.js"></script>
@@ -48,24 +47,22 @@
 	$pages = get_pages('child_of=0&sort_column=menu_order');
 	$count = 0;
 	foreach($pages as $page)
-	{		
+	{
 		$content = $page->post_content;
 		if(!$content)
 			continue;
 		//if($count >= 2)
 			//break;
-		$count++;	
+		$count++;
 		$content = apply_filters('the_content', $content);
 	?>
 	        <div class="slide">
-
 		<h1><?php echo $page->post_title ?></h1>
 		<?php echo $content ?>
 		</div>
 	<?php
-	}	
+	}
 ?>
-
         <div class="footer">
             <span class="left">René Stalder, Bastian Widmer</span>
         </div>
